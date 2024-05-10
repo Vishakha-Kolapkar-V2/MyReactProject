@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import Home from './cmd/Home';
 import About from './cmd/About';
@@ -6,6 +5,9 @@ import Forms from './cmd/Forms';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Students from './cmd/Students';
 import { useState } from 'react'
+import ConditionalR from './ConditionalRendering/ConditionalR';
+import Array from './cmd/ArrayListing/Array';
+
 function App() {
   const [name, setName] = useState("SHREE")
   const [color, setColor] = useState("Orange"); // Initial color is orange
@@ -46,6 +48,8 @@ function App() {
 
       <button onClick={() => setStatus(true)}>SHOW</button>
       <button onClick={() => setStatus(false)}>HIDE</button>
+      <ConditionalR/>
+      <Array/>
     </div>
   );
 }
