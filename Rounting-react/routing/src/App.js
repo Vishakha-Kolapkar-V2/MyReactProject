@@ -9,13 +9,16 @@ import { useState } from 'react'
 function App() {
   const [name, setName] = useState("SHREE")
   const [color, setColor] = useState("Orange"); // Initial color is orange
-
+  const [status, setStatus] = useState(true); //hide & show
   const handleClick = () => {
     setName("SWAMI");
     setColor("red"); // Change color to red when button is clicked
   };
   return (
     <div className="App">
+      {
+        status ? <b><i>------- Hello World..! -------</i></b> : null          //hide & show
+      }
       {/* routing in react */}
       <h1 style={{ backgroundColor: 'skyblue' }}>Routing in react</h1>
       <Router>
@@ -41,6 +44,8 @@ function App() {
         cursor: 'pointer',
       }} onClick={handleClick}>Click me</button>
 
+      <button onClick={() => setStatus(true)}>SHOW</button>
+      <button onClick={() => setStatus(false)}>HIDE</button>
     </div>
   );
 }
